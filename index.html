@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula 1</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src=”https://unpkg.com/react@16.7.0/umd/react.production.min.js”></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <style>
+        body{
+            background-color: #222;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+            const dest = document.getElementById("root");
+            class HomePage extends React.Component {
+              constructor(props) {
+                super(props);
+                this.state = {
+                  firstName: "Milovan",
+                  lastName: "Grbic",
+                  indNum: "MIT19/21",
+                };
+              }
+              message = (x)=> alert(x);
+              render(){
+                  const menuStyle={
+                      backgroundColor:"Red",
+                      height:"70px",
+                    fontSize:"20px",
+                    color:"White",
+                  }
+                  const footerStyle={
+                    backgroundColor:'red',
+                    height:"140px",
+                    color:"white"
+                  }
+                  const sectionStyle={
+                    display:"flex",
+                    justifyContent:"center"
+                  }
+
+                  
+                  return(
+                      <div>
+                        <nav class="navbar navbar-expand-lg navbar-light bg-dark" onLoad={this.message("Welcome to F1 page!\nEnjoy")}>
+                        <div class="container-fluid" style={menuStyle}>
+                        <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" >
+          <a style={{color:"White",fontWeight:"Bold"}} class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a style={{color:"White",fontWeight:"Bold"}} class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a style={{color:"White",fontWeight:"Bold"}} class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+        {this.state.firstName} {this.state.lastName} {this.state.indNum} 
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        > 
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="container-fluid">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/logo-f1.png" class="d-block w-100" style={{height:786}} alt="logo-f1"/>
+          </div>
+          <div class="carousel-item">
+            <img src="img/ferrari.jpg" class="d-block w-100" alt="ferrari"/>
+          </div>
+          <div class="carousel-item">
+            <img src="img/redbull.jpg" class="d-block w-100" alt="redbull"/>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="teams" style={{marginTop:"20px",display:"flex",justifyContent:"center",flexWrap:"wrap"}}>
+        <div class="ferrari-section" style={{padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="ferrari-bolid">
+            <h3 style={{color:"white"}}>Ferrari Team</h3>
+            <img src="img/ferrari-bolid.png" alt="ferrari-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Carlos Saintz</p>
+                <img src="img/saintz.png" alt="saintz"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Charles Leclerc</p>
+                <img src="img/leclerc.png" alt="leclerc"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="redbull-section" style={{padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="redbull-bolid">
+            <h3 style={{color:"white"}}>Redbull Team</h3>
+            <img src="img/redbull-bolid.png" alt="redbull-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Max Verstappen</p>
+                <img src="img/verstappen.png" alt="verstappen"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Sergio Perez</p>
+                <img src="img/perez.png" alt="perez"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mercedes-section" style={{padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="mercedes-bolid">
+            <h3 style={{color:"white"}}>Mercedes Team</h3>
+            <img src="img/mercedes-bolid.png" alt="mercedes-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Lewis Hamilton</p>
+                <img src="img/hamilton.png" alt="hamilton"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>George Russell</p>
+                <img src="img/russell.png" alt="russell"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mclaren-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="mclaren-bolid">
+            <h3 style={{color:"white"}}>McLaren Team</h3>
+            <img src="img/mclaren-bolid.png" alt="mclaren-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Lando Norris</p>
+                <img src="img/norris.png" alt="norris"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Daniell Ricciardo</p>
+                <img src="img/ricciardo.png" alt="ricciardo"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alfaromeo-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="alfaromeo-bolid">
+            <h3 style={{color:"white"}}>Alfa Romeo Team</h3>
+            <img src="img/alfaromeo-bolid.png" alt="alfaromeo-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Zhou Guanyu</p>
+                <img src="img/guanyu.png" alt="guanyu"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Valtteri Bottas</p>
+                <img src="img/bottas.png" alt="bottas"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alpine-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="alpine-bolid">
+            <h3 style={{color:"white"}}>Alpine Team</h3>
+            <img src="img/alpine-bolid.png" alt="alpine-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Fernando Alonso</p>
+                <img src="img/alonso.png" alt="alonso"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Esteban Ocon</p>
+                <img src="img/ocon.png" alt="ocon"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alphatauri-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="alphatauri-bolid">
+            <h3 style={{color:"white"}}>AlphaTauri Team</h3>
+            <img src="img/alphatauri-bolid.png" alt="alphatauri-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Yuki Tsunoda</p>
+                <img src="img/tsunoda.png" alt="tsunoda"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Pierre Gasly</p>
+                <img src="img/gasly.png" alt="gasly"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="haas-f1-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="haas-f1-bolid">
+            <h3 style={{color:"white"}}>Hass F1 Team</h3>
+            <img src="img/haas-bolid.png" alt="haas-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Mick Schumacher</p>
+                <img src="img/schumacher.png" alt="schumacher"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Kevin Magnussen</p>
+                <img src="img/magnussen.png" alt="magnussen"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="astonmartin-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="astonmartin-bolid">
+            <h3 style={{color:"white"}}>Aston Martin Team</h3>
+            <img src="img/astonmartin-bolid.png" alt="astonmartin-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Sebastian Vettel</p>
+                <img src="img/vettel.png" alt="vettel"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Lance Stroll</p>
+                <img src="img/stroll.png" alt="stroll"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="williams-section" style={{marginTop:"10px",padding:"10px",marginRight:"10px",display:"flex",flexDirection:"column",border:"1px solid red"}}>
+          <div class="williams-bolid">
+            <h3 style={{color:"white"}}>William Team</h3>
+            <img src="img/williams-bolid.png" alt="williams-bolid"/>
+            <div class="drivers" style={{display:"flex"}}>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Alexander Albon</p>
+                <img src="img/albon.png" alt="albon"/>  
+              </div>
+              <div class="driver">
+                <p style={{color:"white",textAlign:"center",fontWeight:"bold"}}>Nicholas Latifi</p>
+                <img src="img/latifi.png" alt="latifi"/>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="py-3 my-4" style={footerStyle}>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+        </ul>
+        <p class="text-center text-white">© 2022 {this.state.firstName} {this.state.lastName} {this.state.indNum}</p>
+      </footer>
+    </div>
+
+    
+                        </div>
+                  )
+              }
+            }
+                  
+                
+
+    
+            ReactDOM.render(<HomePage />, dest);
+    </script>
+  </body>
+</html>
